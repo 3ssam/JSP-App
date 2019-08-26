@@ -6,8 +6,6 @@
 Hello World!!!!!
 
 <br>
-<br>
-<br>
 
 The time is <%= new Date() %>
 
