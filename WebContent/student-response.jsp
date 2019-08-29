@@ -6,6 +6,11 @@ The student is confirmed:
 <%= request.getParameter("lastname") %> 
 <br>
 <%= request.getParameter("country") %> 
+<br>
+<%= request.getParameter("Language") %> 
+<br>
+<%= request.getParameter("lastname") %> 
+
 
 </body>
 
