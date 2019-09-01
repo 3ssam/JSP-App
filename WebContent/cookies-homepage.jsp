@@ -1,3 +1,4 @@
+<%@page import="java.net.URLDecoder"%>
 <html>
 
 <body>
@@ -9,7 +10,7 @@
 		if (theCookies != null)
 			for (Cookie cookie : theCookies)
 				if ("myApp.favoriteLanguage".equals(cookie.getName())) {
-					language = cookie.getValue();
+					language = URLDecoder.decode(cookie.getValue(), "UTF-8");
 					break;
 				}
 	%>
