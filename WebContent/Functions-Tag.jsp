@@ -14,7 +14,25 @@ Uppercase version of String <b>${Data}</b> is : ${fn:toUpperCase(Data)}
 
 Does the String <b>${Data}</b> is start with ess: ${fn:startsWith(Data,"ess")}
 <br>
+<br>
+<br>
 
+<h3>Split Demo</h3>
+<br>
+<c:set var="cities" value="cairo,paris,london,madrid"/>
+
+<c:set var="myCitiesArray" value="${fn:split(cities,',')}"/>
+
+<c:forEach var="city" items="${myCitiesArray }">
+${city}<br/>
+</c:forEach>
+
+<h3>Join Demo</h3>
+<br>
+
+<c:set var="newCities" value="${fn:join(myCitiesArray,'*')}"/>
+
+<p>${ newCities}</p>
 
 </body>
 
