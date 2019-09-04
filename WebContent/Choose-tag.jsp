@@ -23,14 +23,11 @@
 			<tr>
 				<td>${student.firstName}</td>
 				<td>${student.lastNaem}</td>
-				<td><c:choose>
-						<c:when test="${student.goldenCustomer}">
-					Special Discount
-				</c:when>
-						<c:otherwise>
-					-
-				</c:otherwise>
-					</c:choose></td>
+				<td><c:if test="${student.goldenCustomer}">
+								Special Discount
+				</c:if> <c:if test="${not student.goldenCustomer}">
+								-
+				</c:if></td>
 
 
 			</tr>
