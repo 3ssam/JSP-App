@@ -3,6 +3,7 @@ package mo.essam.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,9 +34,13 @@ public class StudentServlet extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		
+		ServletContext context = getServletContext();
+		
+		String Name = context.getInitParameter("Name");
+		String Job = context.getInitParameter("Job");
 		out.println("<html><body>");
 		
-		out.println("Hello "+request.getParameter("firstName")+" "+request.getParameter("lastName"));
+		out.println("Hello "+Job+" "+Name);
 		out.println("<hr>");
 		out.println("Time on the server is: " + new java.util.Date());
 		out.println("</body></html>");		
