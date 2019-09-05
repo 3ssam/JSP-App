@@ -2,7 +2,9 @@ package mo.essam.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,7 +32,7 @@ public class StudentServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.setContentType("text/html");
+		/*response.setContentType("text/html");
 		
 		PrintWriter out = response.getWriter();
 		
@@ -43,7 +45,15 @@ public class StudentServlet extends HttpServlet {
 		out.println("Hello "+Job+" "+Name);
 		out.println("<hr>");
 		out.println("Time on the server is: " + new java.util.Date());
-		out.println("</body></html>");		
+		out.println("</body></html>");	*/
+		StudentDataUtil util = null;
+		List<Student> students = util.getStudents(); 
+		
+		request.setAttribute("Students",students);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/view-student.jsp");
+		
+		dispatcher.forward(request, response);
 	}
 
 	/**
